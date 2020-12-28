@@ -156,7 +156,7 @@ app.post('/api/createUserToken', async (req, res) => {
         if (newItem) {
             const userToken = new UserToken(newItem)
             await userToken.save()
-            return res.status(200).send(userToken); 
+            return res.status(200).send({ link: `https://golveronika.github.io/tttmp.github.io/?userToken=${userToken._id}` }); 
         }
 
     } catch (err) {
